@@ -3,8 +3,8 @@
         <div class="col-lg-6 offset-lg-3">
             <div class="card">
                 <div class="card-body text-center">
-                    <span class="titulo">{{titulo|uppercase}}</span>
-                    <form action="" class="mt-3" [formGroup]="productoForm" (ngSubmit)="agregarProducto()">
+                    <span id="titulo" class="titulo">{{titulo|uppercase}}</span>
+                    <form id="formP" action="" class="mt-3" [formGroup]="productoForm" (ngSubmit)="agregarProducto()">
                         <div class="mb-3">
                             <input type="text" class="form-control form-control-lg" placeholder="Producto" formControlName="producto">
                             <div class="text-danger" 
@@ -35,7 +35,7 @@
                         </div>
                         <div class="mb-3">
                             <button routerLink="/" class="btn btn-secondary btn-lg float-start">VOLVER</button>
-                            <button [disabled]="productoForm.invalid" type="submit" class="btn btn-success btn-lg float-end">ACEPTAR</button>
+                            <button id="submitP" [disabled]="productoForm.invalid" type="submit" class="btn btn-success btn-lg float-end">ACEPTAR</button>
                         </div>
                     </form>
                 </div>

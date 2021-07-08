@@ -1,12 +1,20 @@
+import { HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
+import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        BrowserAnimationsModule,
+        RouterTestingModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        ToastrModule.forRoot()
       ],
       declarations: [
         AppComponent
@@ -26,10 +34,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('cliente');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('cliente app is running!');
-  });
 });
